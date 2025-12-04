@@ -1,89 +1,113 @@
 # 🖼️ Natural Scene Classification using Transfer Learning (ResNet-50 Fine-Tuning on NaSC-TG2 Dataset)
 
-This repository presents a deep learning pipeline for Natural Scene Classification using Transfer Learning with a pre-trained ResNet-50 model. The model is fine-tuned on the NaSC-TG2 dataset, a benchmark dataset containing multiple natural scene categories.
-This project demonstrates expertise in Computer Vision, Transfer Learning, and Deep Learning Model Optimization, making it highly relevant for academic and research applications (e.g., PhD applications).
+This repository presents a deep learning pipeline for Natural Scene Classification using Transfer Learning with a pre-trained ResNet-50 model. The model is fine-tuned on the NaSC-TG2 dataset, a benchmark dataset containing multiple natural scene classes.
+This project demonstrates expertise in Computer Vision, Transfer Learning, and Deep Learning Model Optimization, making it highly relevant for academic research.
 
-📌 Project Overview
+## 📌 Project Overview
 
 Natural scene classification is a fundamental problem in computer vision, with applications in:
 
-Remote sensing
+- Remote sensing
 
-Autonomous driving
+- Autonomous driving
 
-Robot navigation
+- UAV navigation
 
-Environmental monitoring
+- Environmental monitoring
 
-Image retrieval systems
 
 This project fine-tunes ResNet-50, pre-trained on ImageNet, on the NaSC-TG2 dataset, achieving high accuracy through:
 
-Transfer learning
+- Transfer learning
 
-Data augmentation
+- Data augmentation
 
-Feature extraction + fine-tuning
+- Feature extraction + fine-tuning
 
 
 🧠 Key Features
 
 ✔ Fine-tuned ResNet-50 (ImageNet pre-trained)
+
 ✔ Full training pipeline (augmentation → training → evaluation)
+
 ✔ Early stopping and learning rate scheduling
+
 ✔ Classification report & confusion matrix
+
 ✔ Training curves (accuracy & loss plots)
+
 ✔ Model testing on custom images
+
 ✔ Fully reproducible PyTorch implementation
 
+
 📁 Repository Structure
+
 │── data/
+
 │   ├── train/
+
 │   ├── val/
+
 │   └── test/
+
 │
+
 │── src/
+
 │   ├── dataset.py
+
 │   ├── train.py
+
 │   ├── eval.py
+
 │   └── utils.py
+
 │
+
 │── models/
+
 │   └── resnet50_finetuned.pth
+
 │
+
 │── notebooks/
+
 │   └── training_experiments.ipynb
+
 │
+
 │── results/
+
 │   ├── confusion_matrix.png
+
 │   ├── training_curve.png
+
 │   └── sample_predictions.png
+
 │
+
 └── README.md
 
-🗂️ Dataset: NaSC-TG2 (Natural Scene Classification)
+
+## 🗂️ Dataset: NaSC-TG2 (Natural Scene Classification)
 
 The NaSC-TG2 dataset contains diverse natural scene categories such as:
 
-Beaches
+- Beaches
 
-Forest
+- Forest
 
-Buildings
+- Mountains
 
-Mountains
+- Ice/Snow
 
-Waterfalls
+- Farmland
 
-Streets
+- Deserts
 
-Ice/Snow
-
-Farmland
-
-Deserts
-
-and more…
+etc.
 
 Dataset Characteristics
 Property	Description
@@ -91,8 +115,9 @@ Total Classes	10 natural scene categories
 Image Format	RGB
 Resolution	~256×256 (varies)
 Train/Val/Test Split	You may define custom splits
-🔧 Methodology
-1. Data Preprocessing
+
+## 🔧 Methodology
+### 1. Data Preprocessing
 
 Resizing to 224×224
 
@@ -108,7 +133,7 @@ Color jitter
 
 Random crop
 
-2. Model Architecture
+### 2. Model Architecture
 
 Using ResNet-50, pre-trained on ImageNet.
 
@@ -116,13 +141,13 @@ model = models.resnet50(pretrained=True)
 for param in model.parameters():
     param.requires_grad = False   # Freeze backbone
 
-# Replace final layer
+#### Replace final layer
 model.fc = nn.Linear(2048, num_classes)
 
 
 Then unfreeze last few layers for fine-tuning.
 
-3. Training Setup
+### 3. Training Setup
 Setting	Value
 Optimizer	Adam
 Learning Rate	1e-4 (fine-tuning), 1e-3 (classifier)
@@ -130,7 +155,7 @@ Loss Function	Cross-Entropy
 Epochs	20–30
 Scheduler	StepLR / CosineAnnealingLR
 Batch Size	32
-4. Evaluation Metrics
+### 4. Evaluation Metrics
 
 Top-1 accuracy
 
