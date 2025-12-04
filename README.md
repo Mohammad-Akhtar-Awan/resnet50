@@ -1,4 +1,4 @@
-🖼️ Natural Scene Classification using Transfer Learning (ResNet-50 Fine-Tuning on NaSC-TG2 Dataset)
+# 🖼️ Natural Scene Classification using Transfer Learning (ResNet-50 Fine-Tuning on NaSC-TG2 Dataset)
 
 This repository presents a deep learning pipeline for Natural Scene Classification using Transfer Learning with a pre-trained ResNet-50 model. The model is fine-tuned on the NaSC-TG2 dataset, a benchmark dataset containing multiple natural scene categories.
 This project demonstrates expertise in Computer Vision, Transfer Learning, and Deep Learning Model Optimization, making it highly relevant for academic and research applications (e.g., PhD applications).
@@ -25,9 +25,6 @@ Data augmentation
 
 Feature extraction + fine-tuning
 
-Regularization (dropout, weight decay)
-
-Learning rate scheduling
 
 🧠 Key Features
 
@@ -90,7 +87,7 @@ and more…
 
 Dataset Characteristics
 Property	Description
-Total Classes	10+ natural scene categories
+Total Classes	10 natural scene categories
 Image Format	RGB
 Resolution	~256×256 (varies)
 Train/Val/Test Split	You may define custom splits
@@ -143,7 +140,7 @@ Precision, Recall, F1-score
 
 Per-class accuracy
 
-📊 Results
+# 📊 Results
 Performance (Sample Values – Customize with Your Results)
 Metric	Value
 Training Accuracy	98.4%
@@ -159,7 +156,7 @@ Training Curves
 
 Sample Predictions
 
-▶️ How to Run
+# ▶️ How to Run
 1. Clone the repository
 git clone https://github.com/your-username/natural-scene-classification.git
 cd natural-scene-classification
@@ -205,7 +202,7 @@ Using larger remote sensing datasets
 
 These improvements show research capability — very useful for PhD applications.
 
-📚 Related Research
+# 📚 Related Research
 
 Kaiming He et al., Deep Residual Learning for Image Recognition, CVPR 2016
 
@@ -213,13 +210,11 @@ Transfer Learning for Natural Scene Classification
 
 Deep Learning in Remote Sensing
 
-👤 Author
+# 👤 Author
 
 Muhammad Akhtar
 
 Research Assistant, Northwestern Polytechnical University
-
-Email: engr.akhtar.awan@gmail.com
 
 LinkedIn: https://www.linkedin.com/in/engr-akhtar-malik/
 
